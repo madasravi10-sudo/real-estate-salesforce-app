@@ -1,0 +1,45 @@
+<template>
+    <lightning-card title="Real Estate Properties Management" icon-name="standard:home">
+        <div class="slds-m-around_medium">
+            <!-- Filters Section -->
+            <div class="slds-grid slds-gutters slds-m-bottom_medium">
+                <div class="slds-col">
+                    <lightning-combobox name="availability" label="Availability Status" value={selectedAvailability}
+                        options={availabilityOptions} onchange={handleFilterChange}>
+                    </lightning-combobox>
+                </div>
+                <div class="slds-col">
+                    <lightning-combobox name="furnishing" label="Furnishing Status" value={selectedFurnishing}
+                        options={furnishingOptions} onchange={handleFilterChange}>
+                    </lightning-combobox>
+                </div>
+                <div class="slds-col">
+                    <lightning-combobox name="PriceRange" label="Price Range status" value={selectedpricerangestatus}
+                        options={pricerangeOptions} onchange={handlepricerangeChange}>
+                    </lightning-combobox>
+                </div>
+                <div class="slds-col">
+                    <lightning-combobox name="distanceKm" label="Nearby Distance (KM) status"
+                        value={selectednearbydistancestatus} options={nearbydistanceOptions}
+                        onchange={handledistanceChange}>
+                    </lightning-combobox>
+                </div>
+            </div>
+
+            <!-- Datatable View -->
+            <div style="height: 300px;">
+                <lightning-datatable key-field="Id" data={properties} columns={columns} hide-checkbox-column>
+                </lightning-datatable>
+            </div>
+
+            <!-- Pagination Controls -->
+            <div class="slds-align_absolute-center slds-m-top_medium">
+                <lightning-button label="Previous" variant="brand" onclick={handlePrev}
+                    disabled={isFirstPage}></lightning-button>
+                <span class="slds-m-horizontal_medium">Page {pageNumber}</span>
+                <lightning-button label="Next" variant="brand" onclick={handleNext}
+                    disabled={isLastPage}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

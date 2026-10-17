@@ -1,0 +1,21 @@
+<template>
+<lightning-card class="slds-card_boundary">
+    <div class="slds-grid slds-grid_vertical-align-center slds-p-around_medium">
+
+        <div class="slds-col slds-grow-none">
+            <lightning-icon icon-name="standard:person_account" size="medium">
+            </lightning-icon>
+        </div>
+
+        <div class="slds-col slds-size_5-of-12 slds-p-left_small">
+            <div class="slds-grid slds-grid_vertical-align-center">
+                <h1 class="slds-text-heading_medium slds-m-right_small">
+                    <a href ="javascript:void(0);" onclick={navigateToRecord}>
+                        <strong>{member.Name}</strong>
+                    </a>
+                </h1>
+            </div>
+        </div>
+    </div>
+</lightning-card>
+</template>

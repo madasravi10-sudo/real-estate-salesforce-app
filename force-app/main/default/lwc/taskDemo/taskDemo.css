@@ -1,0 +1,35 @@
+.todo-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9; /* Add a light background color */
+}
+
+.todo-container h1 {
+    text-align: center;
+}
+
+.todo-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.todo-container li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.todo-container input {
+    width: calc(100% - 60px);
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.todo-container button {
+    padding: 10px;
+}

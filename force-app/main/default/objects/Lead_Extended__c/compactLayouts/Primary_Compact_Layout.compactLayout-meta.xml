@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Compact_Layout</fullName>
+    <fields>Score__c</fields>
+    <fields>Source__c</fields>
+    <fields>Status__c</fields>
+    <fields>OwnerId</fields>
+    <fields>Name</fields>
+    <label>Primary Compact Layout</label>
+</CompactLayout>

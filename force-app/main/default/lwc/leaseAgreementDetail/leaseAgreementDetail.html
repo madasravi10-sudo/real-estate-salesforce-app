@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Lease Agreement Management" icon-name="standard:contract">
+        <div class="slds-m-around_medium">
+            <p><strong>Tenant:</strong> {tenantName}</p>
+            <p><strong>Property:</strong> {propertyName}</p>
+            <p><strong>End Date:</strong> {endDate}</p>
+
+            <div class="slds-m-top_medium">
+                <lightning-button label="Download PDF" variant="brand" onclick={generatePDF}
+                    class="slds-m-right_small"></lightning-button>
+                <lightning-button label="Send PDF to Tenant" variant="neutral"
+                    onclick={sendPDFEmail}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

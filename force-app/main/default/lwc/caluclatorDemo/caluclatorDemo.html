@@ -1,0 +1,22 @@
+<template>
+   <lightning-card title="Full Caluclator" icon-name="custom:custom34">
+        <div class="slds-m-around_medium">
+         <p>calc Expression</p>
+        <p>Result :{result}</p>
+        <div class="calc-grid">
+    <template for:each={buttons} for:item="row">
+        <div key={row.id} class="calc-row">
+<template for:each={row.values} for:item="btn">
+    <lightning-button
+               key={btn.label}
+               label={btn.label}
+               variant={btn.variant}
+               onclick={handleButtonClick}></lightning-button>
+
+</template>
+</div>
+ </template>
+</div>
+    </div>
+    </lightning-card>
+</template>

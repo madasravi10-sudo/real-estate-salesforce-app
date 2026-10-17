@@ -1,0 +1,145 @@
+<template>
+
+    <!-- Escalation Card -->
+    <template if:true={showEscalation}>
+
+        <div class="slds-box slds-theme_error slds-m-bottom_medium">
+
+            <div class="slds-grid slds-wrap slds-grid_align-spread">
+
+                <div>
+
+                    <h2 class="slds-text-heading_small">
+                        ⚠ Escalation Alert
+                    </h2>
+
+                    <p class="slds-m-top_x-small">
+
+                        <strong>Case Number:</strong>
+                        {selectedCase.CaseNumber}
+
+                    </p>
+
+                    <p>
+
+                        <strong>Status:</strong>
+                        {selectedCase.Status}
+
+                    </p>
+
+                    <p>
+
+                        <strong>Owner:</strong>
+                        {selectedCase.Owner.Name}
+
+                    </p>
+
+                </div>
+
+                <div class="slds-align_absolute-center">
+
+                    <lightning-button
+                        label="View Details"
+                        variant="brand"
+                        onclick={openModal}>
+                    </lightning-button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </template>
+
+    <!-- Modal Popup -->
+    <template if:true={showModal}>
+
+        <section
+            role="dialog"
+            tabindex="-1"
+            class="slds-modal slds-fade-in-open">
+
+            <div class="slds-modal__container">
+
+                <!-- Modal Header -->
+                <header class="slds-modal__header">
+
+                    <lightning-button-icon
+                        icon-name="utility:close"
+                        alternative-text="Close"
+                        onclick={closeModal}
+                        class="slds-modal__close">
+                    </lightning-button-icon>
+
+                    <h2 class="slds-text-heading_medium">
+                        Escalation Details
+                    </h2>
+
+                </header>
+
+                <!-- Modal Body -->
+                <div class="slds-modal__content slds-p-around_medium">
+
+                    <p>
+                        <strong>Case Number:</strong>
+                        {selectedCase.CaseNumber}
+                    </p>
+
+                    <br/>
+
+                    <p>
+                        <strong>Subject:</strong>
+                        {selectedCase.Subject}
+                    </p>
+
+                    <br/>
+
+                    <p>
+                        <strong>Status:</strong>
+                        {selectedCase.Status}
+                    </p>
+
+                    <br/>
+
+                    <p>
+                        <strong>Priority:</strong>
+                        {selectedCase.Priority}
+                    </p>
+
+                    <br/>
+
+                    <p>
+                        <strong>Owner:</strong>
+                        {selectedCase.Owner.Name}
+                    </p>
+
+                    <br/>
+
+                    <p>
+                        <strong>Description:</strong>
+                        {selectedCase.Description}
+                    </p>
+
+                </div>
+
+                <!-- Modal Footer -->
+                <footer class="slds-modal__footer">
+
+                    <lightning-button
+                        label="Close"
+                        onclick={closeModal}>
+                    </lightning-button>
+
+                </footer>
+
+            </div>
+
+        </section>
+
+        <!-- Backdrop -->
+        <div class="slds-backdrop slds-backdrop_open"></div>
+
+    </template>
+
+</template>

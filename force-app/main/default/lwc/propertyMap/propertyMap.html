@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Property Location Map" icon-name="standard:location">
+        <div class="slds-m-around_medium">
+            <template if:true={mapMarkers}>
+                <lightning-map map-markers={mapMarkers} zoom-level="14"></lightning-map>
+            </template>
+            <template if:false={mapMarkers}>
+                <p>No location coordinates available for this property.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

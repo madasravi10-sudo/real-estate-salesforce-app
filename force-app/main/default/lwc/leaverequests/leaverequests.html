@@ -1,0 +1,178 @@
+<template>
+
+    <lightning-card title="Leave Requests">
+
+        <!-- Leave Request Table -->
+
+        <lightning-datatable
+            key-field="Id"
+            data={leaveRequests}
+            columns={columns}
+            onrowaction={handleRowAction}>
+        </lightning-datatable>
+
+
+        <!-- No Records -->
+
+        <template lwc:if={NoRecordsFound}>
+
+            <div
+                class="slds-align_absolute-center
+                       slds-p-around_small
+                       slds-text-heading_medium">
+
+                No Records Found
+
+            </div>
+
+        </template>
+
+    </lightning-card>
+
+
+    <!-- ============================== -->
+    <!-- EDIT LEAVE REQUEST MODAL -->
+    <!-- ============================== -->
+
+    <template lwc:if={showEditModal}>
+
+        <section
+            role="dialog"
+            tabindex="-1"
+            aria-modal="true"
+            class="slds-modal slds-fade-in-open">
+
+            <div class="slds-modal__container">
+
+
+                <!-- ============================== -->
+                <!-- MODAL HEADER -->
+                <!-- ============================== -->
+
+                <header class="slds-modal__header">
+
+                    <button
+                        class="slds-button
+                               slds-button_icon
+                               slds-modal__close"
+                        title="Close"
+                        onclick={handleCancel}>
+
+                        <lightning-icon
+                            icon-name="utility:close"
+                            alternative-text="Close"
+                            size="small">
+                        </lightning-icon>
+
+                    </button>
+
+
+                    <h2 class="slds-text-heading_medium">
+
+                        Edit Leave Request
+
+                    </h2>
+
+                </header>
+
+
+                <!-- ============================== -->
+                <!-- MODAL BODY -->
+                <!-- ============================== -->
+
+                <div
+                    class="slds-modal__content
+                           slds-p-around_medium">
+
+                    <lightning-record-edit-form
+                        data-id="editLeaveForm"
+                        record-id={selectedLeaveId}
+                        object-api-name="Leave_Requests__c"
+                        onsubmit={handleSubmit}
+                        onsuccess={handleSuccess}
+                        onerror={handleError}>
+
+                        <lightning-messages>
+                        </lightning-messages>
+                       
+                        <lightning-output-field
+                            field-name="user__c">
+
+                        </lightning-output-field>
+
+                        <!-- From Date -->
+
+                        <lightning-output-field
+                            field-name="From_Date__c">
+
+                        </lightning-output-field>
+
+
+                        <!-- To Date -->
+
+                        <lightning-output-field
+                            field-name="To_Date__c">
+
+                        </lightning-output-field>
+
+
+                        <!-- Reason - READ ONLY -->
+
+                        <lightning-output-field
+                            field-name="Reason__c">
+
+                        </lightning-output-field>
+
+
+                        <!-- Manager Comment -->
+
+                        <lightning-input-field
+                            field-name="Manager_Comment__c">
+
+                        </lightning-input-field>
+
+
+                        <!-- Buttons -->
+
+                        <div
+                            class="slds-m-top_medium
+                                   slds-text-align_right">
+
+                            <lightning-button
+                                label="Cancel"
+                                variant="neutral"
+                                onclick={handleCancel}>
+
+                            </lightning-button>
+
+
+                            <lightning-button
+                                class="slds-m-left_small"
+                                type="submit"
+                                label="Save"
+                                variant="brand">
+
+                            </lightning-button>
+
+                        </div>
+
+                    </lightning-record-edit-form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BACKDROP -->
+
+        <div
+            class="slds-backdrop
+                   slds-backdrop_open">
+
+        </div>
+
+    </template>
+
+</template>

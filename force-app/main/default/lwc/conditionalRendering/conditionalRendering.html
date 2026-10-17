@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Conditional Rendering Example">
+
+        <!-- Checkbox -->
+        <lightning-input
+            type="checkbox"
+            label="Show Additional Details"
+            onchange={handleCheckboxChange}>
+        </lightning-input>
+
+        <!-- Show when checkbox is TRUE -->
+        <template if:true={showDetails}>
+            <lightning-input
+                label="Email"
+                type="email"
+                class="slds-m-top_small">
+            </lightning-input>
+
+            <lightning-input
+                label="Phone"
+                type="phone"
+                class="slds-m-top_small">
+            </lightning-input>
+        </template>
+
+        <!-- Show when checkbox is FALSE -->
+        <template if:false={showDetails}>
+            <p class="slds-m-top_small">
+                Please select the checkbox to see additional fields.
+            </p>
+        </template>
+
+    </lightning-card>
+</template>

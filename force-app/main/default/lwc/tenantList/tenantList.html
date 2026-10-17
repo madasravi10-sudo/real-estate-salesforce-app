@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Tenants Management" icon-name="standard:contact">
+        <div class="slds-m-around_medium">
+            <template if:true={tenants.length}>
+                <div style="height: 300px;">
+                    <lightning-datatable key-field="Id" data={tenants} columns={columns} hide-checkbox-column>
+                    </lightning-datatable>
+                </div>
+            </template>
+            <template if:false={tenants.length}>
+                <p class="slds-text-align_center">No tenants found.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

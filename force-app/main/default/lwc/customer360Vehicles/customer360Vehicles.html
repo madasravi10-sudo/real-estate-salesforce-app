@@ -1,0 +1,21 @@
+<template>
+<div class="slds-box slds-theme_default">
+    <div class="section">
+        <p class="section-title"> VEHICLES</P>
+
+        <template for:each={vehicles} for:item="vehicle">
+            <div key={vehicle.id} class="vehicle-item">
+                <p class="vehicle-name">{vehicle.name}</p>
+                <p class="vehicle-type">{vehicle.type}</p>
+                </div>
+                </template>
+    </div>
+
+    <div class="section">
+         <p class="section-title">PAYMENT</P>
+         <P>{paymentMethod}</p>
+         
+         <p class="next-charge">Next charge: {nextCharge}</p>
+         </div>
+</div>
+</template>

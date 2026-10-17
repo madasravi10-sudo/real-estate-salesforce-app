@@ -1,0 +1,10 @@
+<template>
+    <lightning-button
+        label="Show Message"
+        onclick={showMsg}>
+    </lightning-button>
+
+    <template if:true={isVisible}>
+        <p>Hello! This message is visible.</p>
+    </template>
+</template>

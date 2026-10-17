@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Account Contacts" icon-name="standard:contact">
+        
+        <template if:true={contacts}>
+            <lightning-datatable
+                key-field="Id"
+                data={contacts}
+                columns={columns}>
+            </lightning-datatable>
+        </template>
+
+        <template if:false={contacts}>
+            <p class="slds-p-around_medium">No Contacts Found</p>
+        </template>
+
+        <div class="slds-p-around_medium">
+            <lightning-button
+                label="Refresh"
+                variant="brand"
+                onclick={refreshData}>
+            </lightning-button>
+        </div>
+
+    </lightning-card>
+</template>

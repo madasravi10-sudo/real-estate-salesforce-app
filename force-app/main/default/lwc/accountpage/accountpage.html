@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Account List">
+        <div class="slds-m-around_medium">
+
+            <!-- Button -->
+            <lightning-button 
+                label="Load Accounts"
+                onclick={handleLoad}>
+            </lightning-button>
+
+            <br/><br/>
+
+            <!-- Account List -->
+            <template if:true={accounts}>
+                <template for:each={accounts} for:item="acc">
+                    <p key={acc.Id}>
+                        {acc.Name}
+                    </p>
+                </template>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

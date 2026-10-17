@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title="Lead Dashboard">
+
+        <div class="slds-m-around_medium">
+
+            <lightning-button label="Refresh"
+                              onclick={loadLeads}
+                              class="slds-m-bottom_small">
+            </lightning-button>
+
+            <template if:true={leads}>
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Company</th>
+                            <th>Score</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <template for:each={leads} for:item="lead">
+                            <tr key={lead.Id}>
+                                <td>{lead.Name}</td>
+                                <td>{lead.Email__c}</td>
+                                <td>{lead.Phone__c}</td>
+                                <td>{lead.Company__c}</td>
+                                <td>{lead.Score__c}</td>
+                                <td>{lead.Status__c}</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+
+        </div>
+
+    </lightning-card>
+</template>

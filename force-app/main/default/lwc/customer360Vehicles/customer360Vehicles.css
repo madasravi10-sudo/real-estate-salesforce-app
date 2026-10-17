@@ -1,0 +1,29 @@
+*section {
+    margin-buttom: 1rem;
+}
+
+.section-title {
+    font-weight:bold;
+    color: #6b6d70;
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.vehicle-item {
+    margin-bottom: 0.5rem;
+}
+
+.vehicle-name {
+    font-weight: 600;
+    font-weight: bold;
+}
+
+.vehicle-type {
+    font-size: 0.75rem;
+    color: gray;
+}
+
+.next-charge {
+    font-size: 0.75rem;
+    color: gray;
+}

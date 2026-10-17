@@ -1,0 +1,14 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true
+    }
+  ],
+  "name": "RealEstateManagement",
+  "namespace": "",
+  "sfdxPackageCompatibility": "1.0",
+  "packageAliases": {},
+  "coreDevMode": true,
+  "apiVersion": "59.0"
+}

@@ -1,0 +1,39 @@
+<template>
+<lightning-card>
+    <div class="slds-p-around_small">
+      <h2 class="slds-text-title_caps slds-text-color_weak slds-m-bottom_small">
+            Household
+        </h2>
+
+
+        <ul class="slds-list_vertical">
+            <template for:each={householdMembers} for:item="member">
+                <li key={member.id} class="slds-item slds-m-bottom_small">
+                    
+                    <div class="slds-media slds-media_center">
+                        <div class="slds-media__figure">
+                            <span class="slds-avatar slds-avatar_circle slds-avatar_medium custom-avatar-bg">
+                                <abbr class="slds-avatar__initials" title={member.name}>
+                                    {member.initials}
+                                </abbr>
+                            </span>
+                        </div>
+                        
+                        <div class="slds-media__body">
+                            <div class="slds-text-heading_small slds-font-weight_bold">
+                                <a href="javascript:void(0);" data-id={member.recordId} onclick={navigateToAccount}>
+                                    {member.name}
+                                </a>
+                            </div>
+                            <div class="slds-text-color_weak">
+                                {member.relationship} &bull; {member.tier}
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+            </template>
+        </ul>
+    </div>
+</lightning-card>
+</template>

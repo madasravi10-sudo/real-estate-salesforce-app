@@ -1,0 +1,9 @@
+<template>
+ <lightning-card title="custom label LREF">
+<lightning-record-edit-form object-api-name="Account" record-id={recordId} onsuccess={handleSuccess}>
+    <lightning-input label="Custom Account Name" value={accountName} onchange={handleChange}></lightning-input>
+    <lightning-button type="submit" label="Save"></lightning-button>
+</lightning-record-edit-form>
+  
+</lightning-card>
+</template>

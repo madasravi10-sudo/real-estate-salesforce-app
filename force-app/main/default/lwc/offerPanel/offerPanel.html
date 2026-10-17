@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="Contextual Offers">
+
+        <template for:each={offers} for:item="offer">
+
+            <div key={offer.offerId} class="offer-card">
+
+                <!-- Red indicator -->
+                <template if:true={offer.hasRecentReferral}>
+                    <span class="red-dot"></span>
+                </template>
+
+                <h3>{offer.offerName}</h3>
+
+                <p>Status: {offer.status}</p>
+
+                <!-- Actions -->
+                <lightning-button 
+                    label="Present"
+                    data-id={offer.offerId}
+                    onclick={handlePresent}>
+                </lightning-button>
+
+                <lightning-button 
+                    label="Dismiss"
+                    data-id={offer.offerId}
+                    onclick={handleDismiss}>
+                </lightning-button>
+
+                <lightning-button 
+                    label="Decline"
+                    data-id={offer.offerId}
+                    onclick={handleDecline}>
+                </lightning-button>
+
+            </div>
+
+        </template>
+
+    </lightning-card>
+</template>

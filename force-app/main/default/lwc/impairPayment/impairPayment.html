@@ -1,0 +1,65 @@
+<template>
+   <template if:true={showEPCModal}>
+        <section role="dialog" class="slds-modal slds-fade-in-open"
+                 style="display: flex; align-items: center; justify-content: center;">
+
+            <div class="slds-modal__container"
+                 style="max-width: 900px; width: 900px; height: 950px; position: relative; padding:20px;">
+
+                <!-- Display Data Properly -->
+                <!-- <div style="background:#f4f6f9; padding:15px; border-radius:6px; margin-bottom:15px;">
+                    <p>custId: {rvndrP.custId}</p>
+                    <p>empId: {rvndrP.empId}</p>
+                    <p>districtOffice: {rvndrP.districtOffice}</p>
+                    <p>section: {rvndrP.section}</p>
+                    <p>sectionNo: {rvndrP.sectionNo}</p>
+                    <p>userId: {rvndrP.userId}</p>
+                    <p>clubCode: {rvndrP.clubCode}</p>
+                    <p>userClubCode: {rvndrP.userClubCode}</p>
+                    <p>source: {rvndrP.source}</p>
+                    <p>secured: {rvndrP.secured}</p>
+                    <p>ersamt: {rvndrP.ersamt}</p>
+                    <p>paymenttype: {rvndrP.paymenttype}</p>
+                    <p>paymentoption: {rvndrP.paymentoption}</p>
+                    <p>allowMemPaymt: {rvndrP.allowMemPaymt}</p>
+                </div> -->
+                
+
+                <!-- Form (for submission only, hidden) -->
+                <form
+                    class="epcForm"
+                    action={rvndrEndpointUrl}
+                    method="POST"
+                    target="epcFrame"
+                >
+                    <input type="hidden" name="custId" value={rvndrP.custId}/>
+                    <input type="hidden" name="empId" value={rvndrP.empId}/>
+                    <input type="hidden" name="districtOffice" value={rvndrP.districtOffice}/>
+                    <input type="hidden" name="section" value={rvndrP.section}/>
+                    <input type="hidden" name="sectionNo" value={rvndrP.sectionNo}/>
+                    <input type="hidden" name="userId" value={rvndrP.userId}/>
+                    <input type="hidden" name="clubCode" value={rvndrP.clubCode}/>
+                    <input type="hidden" name="userClubCode" value={rvndrP.userClubCode}/>
+                    <input type="hidden" name="source" value={rvndrP.source}/>
+                    <input type="hidden" name="secured" value={rvndrP.secured}/>
+                    <input type="hidden" name="callingApp" value="RADAR"/>
+                    <input type="hidden" name="ersamt" value={rvndrP.ersamt}/>
+                    <input type="hidden" name="paymenttype" value={rvndrP.paymenttype}/>
+                    <input type="hidden" name="paymentoption" value={rvndrP.paymentoption}/>
+                    <input type="hidden" name="allowMemPaymt" value={rvndrP.allowMemPaymt}/>
+                </form>
+
+                <!-- Close Button -->
+                <!-- <lightning-button 
+                    variant="brand" 
+                    label="Close" 
+                    onclick={handleClick}
+                    class="slds-m-top_medium">
+                </lightning-button> -->
+
+            </div>
+        </section>
+
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

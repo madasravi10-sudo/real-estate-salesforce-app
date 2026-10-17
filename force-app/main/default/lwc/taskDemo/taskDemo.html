@@ -1,0 +1,15 @@
+<template>
+    <div class="todo-container">
+        <h1>ToDo List</h1>
+        <ul>
+            <template for:each={tasks} for:item="task">
+                <li key={task.id}>
+                    {task.name}
+                    <button onclick={handleDelete} data-id={task.id}>🗑️</button>
+                </li>
+            </template>
+        </ul>
+        <input type="text" placeholder="Enter new task" value={newTask} oninput={handleInput} />
+        <button onclick={handleAdd}>Add</button>
+    </div>
+</template>
